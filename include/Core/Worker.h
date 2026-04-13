@@ -9,16 +9,6 @@ namespace FactorySim {
 
     class Worker : public Entity
     {
-    private:
-        float fillRandom() {
-            // Static generator so the method is only seeded once
-            static std::mt19937 gen(std::random_device{}());
-
-            // Uniform distribution for the range [0.0, 0.6]
-            std::uniform_real_distribution<float> dis(0.0f, 0.6f);
-
-            return dis(gen);
-        }
 
     protected:
         std::string name;
@@ -44,8 +34,8 @@ namespace FactorySim {
         role(role),
         skill_level(skill_level),
         fatigue(0.0f),
-        error_rate(fillRandom()),
-        absent_prob((fillRandom()))
+        error_rate(fillRandom(0.0f, 0.6f)),
+        absent_prob((fillRandom(0.0f, 0.6f)))
         {}
 
         [[nodiscard]] float getEfficiency() const {

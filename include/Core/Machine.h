@@ -21,16 +21,6 @@ namespace FactorySim {
         // Pure Virtual: Derived classes to trigger specific breakdown logic
         virtual void onBreakdown() = 0;
 
-        float fillRandom(float min, float max) {
-            // Static generator so the method is only seeded once
-            static std::mt19937 gen(std::random_device{}());
-
-            // Uniform distribution for the range [0.0, 0.6]
-            std::uniform_real_distribution<float> dis(min, max);
-
-            return dis(gen);
-        }
-
     public:
         Machine(
             std::string id,
