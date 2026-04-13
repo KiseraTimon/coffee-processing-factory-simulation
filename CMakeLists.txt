@@ -15,4 +15,5 @@ add_executable(Coffee_Processing_Factory_Simulation main.cpp
         src/Core/Machine.cpp
         src/Harvest/FarmPlot.cpp
         include/Harvest/Harvester.h
+        src/Harvest/Harvester.cpp
 )
