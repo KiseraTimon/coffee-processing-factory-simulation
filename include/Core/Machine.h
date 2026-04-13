@@ -2,6 +2,7 @@
 #include "Entity.h"
 #include "Batch.h"
 #include <random>
+#include <utility>
 
 namespace FactorySim {
     class Machine: public Entity
@@ -35,8 +36,10 @@ namespace FactorySim {
             std::string id,
             float throughput)
                 :
-        Entity(id),
+        Entity(std::move(id)),
+        status(MachineStatus::RUNNING),
         throughput_capacity(throughput),
+        efficiency(1.0f),
         mtbf_hours(fillRandom(1.0f, 24.0f)),
         mttr_hours(fillRandom(0.0f, 1.0f)),
         hours_since_maint(0.0f),
