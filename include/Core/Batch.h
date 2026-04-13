@@ -27,6 +27,16 @@ namespace FactorySim {
 
         std::vector<std::string> event_trail;
 
+        static float fillRandom(float min, float max) {
+            // Static generator so the method is only seeded once
+            static std::mt19937 gen(std::random_device{}());
+
+            // Uniform distribution for the range [0.0, 0.6]
+            std::uniform_real_distribution<float> dis(min, max);
+
+            return dis(gen);
+        }
+
     public:
         Batch(
             std::string id,
