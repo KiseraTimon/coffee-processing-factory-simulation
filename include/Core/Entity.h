@@ -7,7 +7,9 @@ namespace FactorySim {
 
     class Entity
     {
-    private:
+    protected:
+        std::string entity_id;
+
         static float fillRandom(float min, float max) {
             // Static generator so the method is only seeded once
             static std::mt19937 gen(std::random_device{}());
@@ -17,9 +19,6 @@ namespace FactorySim {
 
             return dis(gen);
         }
-
-    protected:
-        std::string entity_id;
 
     public:
         // Constructor
