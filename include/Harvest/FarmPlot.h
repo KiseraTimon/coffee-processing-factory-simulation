@@ -27,18 +27,8 @@ namespace FactorySim {
             int alt,
             float density,
             float yield,
-            float r_mean = 0.85f,
-            float r_stddev = 0.10f)
-                :
-        plot_id(id),
-        variety(variety),
-        area_ha(area),
-        altitude(alt),
-        cherry_density(density),
-        ripeness_mean(r_mean),
-        ripeness_stddev(r_stddev),
-        yield_estimate(yield)
-        {}
+            float r_mean,
+            float r_stddev);
 
         // UML Actions
 
