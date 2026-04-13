@@ -9,4 +9,5 @@ add_executable(Coffee_Processing_Factory_Simulation main.cpp
         src/Core/Worker.cpp
         include/Core/CoreTypes.h
         include/Core/Batch.h
+        include/Core/Machine.h
 )
