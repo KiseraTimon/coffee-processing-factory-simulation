@@ -14,7 +14,7 @@ namespace FactorySim {
     };
 
     enum class WorkerRole {
-        NONE, GENERAL, RECEIVER, ROASTER, GRADER, PACKAGER, TECHNICIAN, MANAGER
+        NONE, GENERAL, HARVESTER, RECEIVER, ROASTER, GRADER, PACKAGER, TECHNICIAN, MANAGER
     };
 
     enum WorkerShift {
@@ -34,5 +34,5 @@ namespace FactorySim {
     };
 
     // Forward declaration of Event Logs
-    class EventLog; 
+    class EventLog;
 }
