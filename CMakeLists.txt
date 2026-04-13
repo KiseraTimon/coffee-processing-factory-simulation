@@ -11,4 +11,5 @@ add_executable(Coffee_Processing_Factory_Simulation main.cpp
         include/Core/Batch.h
         include/Core/Machine.h
         include/Harvest/FarmPlot.h
+        src/Core/Batch.cpp
 )

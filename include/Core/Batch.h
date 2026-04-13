@@ -1,6 +1,5 @@
 #pragma once
 #include <string>
-#include <utility>
 #include <vector>
 #include <random>
 #include "CoreTypes.h"
@@ -42,34 +41,12 @@ namespace FactorySim {
             std::string id,
             std::string farm_id,
             CoffeeVariety var,
-            float initial_weight)
-            :
-        batch_id(std::move(id)),
-        origin_farm_id(std::move(farm_id)),
-        variety(var),
-        method(ProcessingMethod::UNASSIGNED),
-        grade(CoffeeGrade::UNGRADED),
-        current_stage(BatchStage::HARVESTED),
-        weight_kg(initial_weight),
-        cherry_ripeness(fillRandom(0.7f, 1.0f)),
-        moisture_pct(fillRandom(0.3f, 0.7f)),
-        contamination(fillRandom(0.0f, 0.4f)),
-        roast_color_score(0.0f),
-        degassing_hours_req(0.0f) {}
+            float initial_weight);
 
         // Modifiers
-        void applyWeightLoss(float fraction) {
-            weight_kg -= (weight_kg * fraction);
-            if (weight_kg < 0.0f) weight_kg = 0.0f;
-        }
-
-        void updateGrade(CoffeeGrade new_grade) {
-            grade = new_grade;
-        }
-
-        void addEvent(const std::string& desc) {
-            event_trail.push_back(desc);
-        }
+        void applyWeightLoss(float fraction);
+        void updateGrade(CoffeeGrade new_grade);
+        void addEvent(const std::string& desc);
 
         // Getters
         [[nodiscard]] float getWeight() const { return weight_kg; }
