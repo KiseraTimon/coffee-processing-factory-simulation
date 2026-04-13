@@ -4,7 +4,6 @@ project(Coffee_Processing_Factory_Simulation)
 set(CMAKE_CXX_STANDARD 26)
 
 add_executable(Coffee_Processing_Factory_Simulation main.cpp
-        src/Core/Entity.cpp
         include/Core/Entity.h
         include/Core/Worker.h
         src/Core/Worker.cpp
