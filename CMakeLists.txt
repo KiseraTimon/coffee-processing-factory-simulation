@@ -64,4 +64,6 @@ add_executable(Coffee_Processing_Factory_Simulation main.cpp
         include/Delivery/Vehicle.h
         src/Delivery/Vehicle.cpp
         include/System/SimulationEngine.h
+        src/System/SimulationEngine.cpp
+        include/System/ThreadSafeQueue.h
 )
