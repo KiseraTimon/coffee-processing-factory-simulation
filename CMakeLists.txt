@@ -26,4 +26,6 @@ add_executable(Coffee_Processing_Factory_Simulation main.cpp
         src/Quality/QualityInspector.cpp
         include/Core/Utils.h
         src/Core/Utils.cpp
+        include/Cleaning/FlotationTank.h
+        src/Cleaning/FlotationTank.cpp
 )
