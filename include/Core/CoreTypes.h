@@ -45,6 +45,10 @@ namespace FactorySim {
         LIGHT, MEDIUM, DARK, ESPRESSO
     };
 
+    enum class PackagingType {
+        RETAIL_250G, RETAIL_500G, EXPORT_60KG
+    };
+
     // Forward declaration of Event Logs
     class EventLog;
 }
