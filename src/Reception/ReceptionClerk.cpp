@@ -16,7 +16,7 @@ namespace FactorySim {
 
     IntakeRecord ReceptionClerk::processArrival(const Batch& batch, const ReceptionScale& scale, std::mt19937& rng) {
         // Clerk uses scale to weigh batch
-        float measured_weight = scale.weigh(batch.getWeight(), rng);
+        float measured_weight = scale.weigh(batch.getWeight());
 
         // Data entry errors simulation
         std::bernoulli_distribution error_dist(1.0f - data_entry_accuracy);
