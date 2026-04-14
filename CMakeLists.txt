@@ -16,4 +16,6 @@ add_executable(Coffee_Processing_Factory_Simulation main.cpp
         src/Harvest/FarmPlot.cpp
         include/Harvest/Harvester.h
         src/Harvest/Harvester.cpp
+        include/Reception/ReceptionScale.h
+        src/Reception/ReceptionScale.cpp
 )
