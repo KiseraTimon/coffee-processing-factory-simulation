@@ -50,4 +50,5 @@ add_executable(Coffee_Processing_Factory_Simulation main.cpp
         src/Roasting/Roaster.cpp
         include/Packaging/PackageUnit.h
         include/Packaging/PackagingMachine.h
+        src/Packaging/PackagingMachine.cpp
 )
