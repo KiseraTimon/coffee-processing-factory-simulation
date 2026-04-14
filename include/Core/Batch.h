@@ -37,14 +37,9 @@ namespace FactorySim {
         void applyWeightLoss(float fraction);
         void updateGrade(CoffeeGrade new_grade);
         void addEvent(const std::string& desc);
-        void addContamination(float fraction) {
-            contamination += (contamination * fraction);
-            if (contamination < 0.0f) contamination = 0.0f;
-        }
-        void reduceContamination(float fraction) {
-            contamination -= (contamination * fraction);
-            if (contamination < 0.0f) contamination = 0.0f;
-        }
+        void addContamination(float amount);
+        void adjustMoisture(float amount);
+        void reduceContamination(float fraction);
 
         // Getters
         float getWeight() const { return weight_kg; }
@@ -52,6 +47,7 @@ namespace FactorySim {
         BatchStage getStage() const { return current_stage; }
         float getContamination() const { return contamination; }
         float getRipeness() const { return cherry_ripeness; }
+        float getMoisture() const { return moisture_pct; }
         void setStage(BatchStage stage) { current_stage = stage; }
     };
 

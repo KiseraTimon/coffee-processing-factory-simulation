@@ -43,4 +43,30 @@ namespace FactorySim {
         event_trail.push_back(desc);
     }
 
+    void Batch::addContamination(float amount) {
+        contamination += amount;
+
+        // Cap contamination (100%)
+        if (contamination > 1.0f) {
+            contamination = 1.0f;
+        }
+    }
+
+    void Batch::reduceContamination(float fraction) {
+        contamination -= (contamination * fraction);
+        if (contamination < 0.0f) contamination = 0.0f;
+    }
+
+
+    void Batch::adjustMoisture(float amount) {
+        moisture_pct += amount;
+
+        // Moisture is between 0-100%
+        if (moisture_pct < 0.0f) {
+            moisture_pct = 0.0f;
+        } else if (moisture_pct > 100.0f) {
+            moisture_pct = 100.0f;
+        }
+    }
+
 }
