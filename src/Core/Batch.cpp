@@ -1,4 +1,5 @@
 #include "../../include/Core/Batch.h"
+#include "../../include/Core/Utils.h"
 #include <utility>
 
 namespace FactorySim {
@@ -17,9 +18,9 @@ namespace FactorySim {
     grade(CoffeeGrade::UNGRADED),
     current_stage(BatchStage::HARVESTED),
     weight_kg(initial_weight),
-    cherry_ripeness(fillRandom(0.7f, 1.0f)), // Random ripeness
-    moisture_pct(fillRandom(0.3f, 0.7f)),    // Random moisture
-    contamination(fillRandom(0.0f, 0.4f)),   // Random contamination
+    cherry_ripeness(Utils::fillRandom(0.7f, 1.0f)), // Random ripeness
+    moisture_pct(Utils::fillRandom(0.3f, 0.7f)),    // Random moisture
+    contamination(Utils::fillRandom(0.0f, 0.4f)),   // Random contamination
     roast_color_score(0.0f),
     degassing_hours_req(0.0f) {}
 

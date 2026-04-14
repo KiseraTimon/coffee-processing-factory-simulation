@@ -26,16 +26,6 @@ namespace FactorySim {
 
         std::vector<std::string> event_trail;
 
-        static float fillRandom(float min, float max) {
-            // Static generator so the method is only seeded once
-            static std::mt19937 gen(std::random_device{}());
-
-            // Uniform distribution for the range [0.0, 0.6]
-            std::uniform_real_distribution<float> dis(min, max);
-
-            return dis(gen);
-        }
-
     public:
         Batch(
             std::string id,
@@ -49,9 +39,11 @@ namespace FactorySim {
         void addEvent(const std::string& desc);
 
         // Getters
-        [[nodiscard]] float getWeight() const { return weight_kg; }
-        [[nodiscard]] std::string getId() const { return batch_id; }
-        [[nodiscard]] BatchStage getStage() const { return current_stage; }
+        float getWeight() const { return weight_kg; }
+        std::string getId() const { return batch_id; }
+        BatchStage getStage() const { return current_stage; }
+        float getContamination() const { return contamination; }
+        float getRipeness() const { return cherry_ripeness; }
         void setStage(BatchStage stage) { current_stage = stage; }
     };
 
