@@ -1,5 +1,6 @@
 #pragma once
 #include "../Core/Machine.h"
+#include <random>
 
 namespace FactorySim{
     class ReceptionScale : public Machine
@@ -9,10 +10,6 @@ namespace FactorySim{
         float precision_kg;
         float drift_per_day;
         int days_since_calibration;
-
-    protected:
-        // Override Method
-        void onBreakdown() override;
 
     public:
         // Constructor
@@ -24,11 +21,11 @@ namespace FactorySim{
             float drift,
             int days_since_calibration);
 
-        [[nodiscard]] float weigh(float true_weight) const;
+        [[nodiscard]] float weigh(float true_weight, std::mt19937& rng) const;
 
         void calibrate();
 
         // Override Method
-        void process(Batch &batch, float delta) override;
+        void logEvent(EventLog &log) override;
     };
 }
