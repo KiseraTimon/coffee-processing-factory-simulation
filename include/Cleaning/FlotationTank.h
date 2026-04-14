@@ -1,6 +1,4 @@
 #pragma once
-#include <setjmp.h>
-
 #include "../Core/Machine.h"
 
 namespace FactorySim {
