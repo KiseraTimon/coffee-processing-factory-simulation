@@ -1,4 +1,5 @@
 #include "../../include/Packaging/PackagingMachine.h"
+#include "../../include/System/EventLog.h"
 #include <random>
 #include <iostream>
 
@@ -90,6 +91,12 @@ namespace FactorySim {
 
             // Deducting the physical weight from the bulk batch (convert g to kg)
             batch.applyWeightLoss((new_bag.net_weight_g / 1000.0f) / batch.getWeight());
+        }
+
+        if (bags_to_pack > 0) {
+            EventLog::getInstance().log(getEntityId(),
+                "Packed " + std::to_string(bags_to_pack) + " bags from Batch " + batch.getId() +
+                ". Remaining bulk: " + std::to_string(batch.getWeight()) + "kg");
         }
     }
 

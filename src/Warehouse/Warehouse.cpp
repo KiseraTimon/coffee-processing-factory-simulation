@@ -1,4 +1,5 @@
 #include "../../include/Warehouse/Warehouse.h"
+#include "../../include/System/EventLog.h"
 #include <cmath>
 #include <iostream>
 
@@ -27,6 +28,8 @@ namespace FactorySim {
             
             // Assuming fresh roasted coffee has 6 months (4320 hours) of shelf life
             inventory_ledger.emplace(b_id, InventoryRecord(b_id, assigned_slot, 4320.0f));
+
+            EventLog::getInstance().log(warehouse_id, "Allocated new slot " + assigned_slot + " for Batch " + b_id);
         }
 
         // Adding the physical bag to the storage vector for the batch
@@ -35,6 +38,8 @@ namespace FactorySim {
         // Updating the ledger and capacity
         inventory_ledger.at(b_id).quantity_bags++;
         current_occupancy++;
+
+        EventLog::getInstance().log(warehouse_id, "Stored Bag " + bag.package_id + " (Lot: " + bag.lot_code + ")");
 
         return true;
     }

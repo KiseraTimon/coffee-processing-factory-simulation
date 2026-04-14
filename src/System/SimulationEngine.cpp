@@ -42,6 +42,9 @@ namespace FactorySim {
             if (auto batch_opt = queue_reception.try_pop()) {
                 auto batch = std::move(*batch_opt);
                 scale->process(*batch, dt_hours);
+
+                EventLog::getInstance().log("SYS_QUEUE", "Batch " + batch->getId() + " moving to Cleaning Stage.");
+
                 queue_cleaning.push(std::move(batch));
             }
             std::this_thread::sleep_for(std::chrono::milliseconds(50));

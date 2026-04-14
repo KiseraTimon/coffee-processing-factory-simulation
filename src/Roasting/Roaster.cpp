@@ -1,4 +1,5 @@
 #include "../../include/Roasting/Roaster.h"
+#include "../../include/System/EventLog.h"
 #include <utility>
 #include <iostream>
 
@@ -74,6 +75,10 @@ namespace FactorySim {
         }
 
         batch.setRoastStats(agtron_score, degassing_hours);
+
+        EventLog::getInstance().log(getEntityId(),
+            "Roasted Batch " + batch.getId() + " to Agtron Color " + std::to_string(agtron_score));
+
         batch.setStage(BatchStage::ROASTED);
 
         // Locking the machine into cooldown mode

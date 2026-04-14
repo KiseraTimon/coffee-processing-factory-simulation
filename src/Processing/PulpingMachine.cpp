@@ -1,4 +1,5 @@
 #include "../../include/Processing/PulpingMachine.h"
+#include "../../include/System/EventLog.h"
 #include <utility>
 
 namespace FactorySim {
@@ -15,6 +16,8 @@ namespace FactorySim {
     void PulpingMachine::process(Batch& batch, float dt) {
         if (status != MachineStatus::RUNNING) return;
 
+        float starting_weight = batch.getWeight();
+
         applyBladeDegradation(dt);
 
         // Pulping removes 40% of the cherry's weight (the fruit skin)
@@ -25,6 +28,10 @@ namespace FactorySim {
             float crushing_damage = (0.60f - pulp_efficiency) * dt;
             batch.addContamination(crushing_damage);
         }
+
+        EventLog::getInstance().log(getEntityId(),
+            "Pulped Batch " + batch.getId() + ". Weight dropped from " +
+            std::to_string(starting_weight) + "kg to " + std::to_string(batch.getWeight()) + "kg");
 
         batch.setStage(BatchStage::PROCESSING);
     }
