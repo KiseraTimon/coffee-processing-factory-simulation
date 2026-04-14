@@ -56,4 +56,5 @@ add_executable(Coffee_Processing_Factory_Simulation main.cpp
         src/Warehouse/Warehouse.cpp
         include/Sales/Order.h
         include/Sales/Customer.h
+        src/Sales/Customer.cpp
 )
