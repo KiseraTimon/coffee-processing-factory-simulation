@@ -49,6 +49,14 @@ namespace FactorySim {
         RETAIL_250G, RETAIL_500G, EXPORT_60KG
     };
 
+    enum class CustomerType {
+        CAFE, ROASTER, IMPORTER, RETAIL_INDIVIDUAL
+    };
+
+    enum class OrderStatus {
+        PENDING, CONFIRMED, PROCESSING, DISPATCHED, DELIVERED, CANCELLED
+    };
+
     // Forward declaration of Event Logs
     class EventLog;
 }
