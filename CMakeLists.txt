@@ -21,4 +21,9 @@ add_executable(Coffee_Processing_Factory_Simulation main.cpp
         include/Reception/ReceptionClerk.h
         include/Reception/IntakeRecord.h
         src/Reception/ReceptionClerk.cpp
+        include/Quality/QualityInspector.h
+        include/Quality/GradeResult.h
+        src/Quality/QualityInspector.cpp
+        include/Core/Utils.h
+        src/Core/Utils.cpp
 )
