@@ -48,7 +48,7 @@ namespace  FactorySim {
                 // Worker Made Mistake Picking Cherries
                 new_batch->addEvent("Harvester" + name + " made a mistake picking cherries!");
             } else {
-                new_batch->addEvent(("Harvester" + name + " collected clean cherries!");
+                new_batch->addEvent("Harvester" + name + " collected clean cherries!");
             }
         }
 
