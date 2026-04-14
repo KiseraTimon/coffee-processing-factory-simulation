@@ -1,4 +1,5 @@
 #include "../../include/Core/Worker.h"
+#include "../../include/Core/Utils.h"
 #include <utility>
 
 namespace FactorySim {
@@ -12,8 +13,8 @@ namespace FactorySim {
         role(role),
         skill_level(skill_level),
         fatigue(0.0f),
-        error_rate(fillRandom(0.0f, 0.6f)),
-        absent_prob((fillRandom(0.0f, 0.6f)))
+        error_rate(Utils::fillRandom(0.0f, 0.6f)),
+        absent_prob(Utils::fillRandom(0.0f, 0.6f))
     {}
 
     void Worker::accumulateFatigue(float delta) {
