@@ -10,7 +10,7 @@ namespace  FactorySim {
         float skill,
         float pick_rate)
     :
-    Worker(std::move(id), std::move(name), WorkerRole::HARVESTER, std::move(skill)),
+    Worker(std::move(id), std::move(name), WorkerRole::HARVESTER, skill),
     pick_rate(pick_rate),
     assigned_plot(nullptr)
     {}
