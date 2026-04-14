@@ -57,6 +57,10 @@ namespace FactorySim {
         PENDING, CONFIRMED, PROCESSING, DISPATCHED, DELIVERED, CANCELLED
     };
 
+    enum class VehicleType {
+        TRUCK, VAN, MOTORCYCLE
+    };
+
     // Forward declaration of Event Logs
     class EventLog;
 }
