@@ -31,24 +31,29 @@ namespace FactorySim {
         return std::clamp(sample, 0.0f, 1.0f);
     }
 
-    std::unique_ptr<Batch> FarmPlot::harvest(float worker_efficiency, std::mt19937 &rng) {
-        // Physical weight picked based on density, area, and worker efficiency
-        float harvested_kg = area_ha * cherry_density * worker_efficiency;
+    std::unique_ptr<Batch> FarmPlot::harvest(float requested_kg, std::mt19937& rng) {
+        // Calculating how much coffee is actually left on the farm
+        float available_kg = area_ha * cherry_density;
 
-        // Depleting the plot's density (to avoid picking same cherries twice
-        cherry_density -= (cherry_density * worker_efficiency);
+        // Pick Limit
+        float actual_harvest_kg = std::min(requested_kg, available_kg);
+
+        if (actual_harvest_kg <= 0.0f) {
+            return nullptr; // Farm is empty!
+        }
+
+        // Depleting the plot's density
+        cherry_density -= (actual_harvest_kg / area_ha);
         if (cherry_density < 0.0f) cherry_density = 0.0f;
 
-        // Random ID for the new batch
         std::string new_batch_id = "BATCH_" + plot_id + "_" + std::to_string(rng() % 10000);
 
-        // unique_ptr owning the new Batch
-        return std::make_unique<Batch>(new_batch_id, plot_id, variety, harvested_kg);
+        return std::make_unique<Batch>(new_batch_id, plot_id, variety, actual_harvest_kg);
     }
 
     void FarmPlot::regrow(float days) {
         // Restores cherry_density over time; driven with a seasonal curve
-        // Temporaty: I am using a flat recovery rate of 5kg per hectare per day
+        // Temporary: I am using a flat recovery rate of 5kg per hectare per day
         float recovery_rate = 5.0f;
         cherry_density += (days * recovery_rate);
 

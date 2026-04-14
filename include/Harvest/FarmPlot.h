@@ -38,9 +38,8 @@ namespace FactorySim {
          * @param rng random number generator
          * @return Batch of Farm Produce
          */
-        std::unique_ptr<Batch> harvest(
-            float worker_efficiency,
-            std::mt19937& rng);
+        // Change this line:
+        std::unique_ptr<Batch> harvest(float requested_kg, std::mt19937& rng);
 
         /**
          *
