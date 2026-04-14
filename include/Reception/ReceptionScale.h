@@ -21,18 +21,16 @@ namespace FactorySim{
             float drift,
             int days_since_calibration);
 
-        [[nodiscard]] float weigh(float true_weight, std::mt19937& rng) const;
+        [[nodiscard]] float weigh(float true_weight) const;
 
         void calibrate();
 
         // Override Method
         void logEvent(EventLog &log) override;
+        void process(Batch &batch, float delta) override;
 
         // Empty Overrides
         void onBreakdown() override {
-            //
-        }
-        void process(Batch &batch, float delta) override {
             //
         }
     };
