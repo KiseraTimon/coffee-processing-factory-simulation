@@ -48,4 +48,6 @@ add_executable(Coffee_Processing_Factory_Simulation main.cpp
         src/Milling/OpticalSorter.cpp
         include/Roasting/Roaster.h
         src/Roasting/Roaster.cpp
+        include/Packaging/PackageUnit.h
+        include/Packaging/PackagingMachine.h
 )
