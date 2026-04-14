@@ -36,4 +36,5 @@ add_executable(Coffee_Processing_Factory_Simulation main.cpp
         src/Processing/PulpingMachine.cpp
         include/Processing/FermentationTank.h
         src/Processing/FermentationTank.cpp
+        include/Processing/WashingChannel.h
 )
