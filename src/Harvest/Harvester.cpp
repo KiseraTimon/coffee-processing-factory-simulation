@@ -1,4 +1,5 @@
 #include "../../include/Harvest/Harvester.h"
+#include "../../include/System/EventLog.h"
 #include <iostream>
 #include <utility>
 
@@ -40,9 +41,8 @@ namespace  FactorySim {
             // Worker Error Rate Influencing Batch Contamination
             std::bernoulli_distribution error_dist(error_rate);
 
-            /**
-             * TODO: There is need to add an addContamination method to my Batch class
-             */
+
+            new_batch->addContamination(error_dist(rng));
 
             if (error_dist(rng)) {
                 // Worker Made Mistake Picking Cherries
@@ -50,6 +50,9 @@ namespace  FactorySim {
             } else {
                 new_batch->addEvent("Harvester" + name + " collected clean cherries!");
             }
+
+            EventLog::getInstance().log(getEntityId(),
+                "Harvested " + std::to_string(new_batch->getWeight()) + "kg (Batch: " + new_batch->getId() + ")");
         }
 
         // Depleting Worker's Energy
