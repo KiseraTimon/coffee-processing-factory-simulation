@@ -33,6 +33,14 @@ namespace FactorySim {
         WASHED, NATURAL, HONEY, UNASSIGNED
     };
 
+    enum class Certificate {
+        NONE, Q_GRADER, LICENSED_CUPPER
+    };
+
+    enum class Disposition {
+        ACCEPTED, REJECTED, REPROCESS
+    };
+
     // Forward declaration of Event Logs
     class EventLog;
 }
