@@ -2,7 +2,6 @@
 #include "Entity.h"
 #include "Batch.h"
 #include <random>
-#include <utility>
 
 namespace FactorySim {
     class Machine: public Entity
@@ -11,8 +10,8 @@ namespace FactorySim {
         MachineStatus status;
         float throughput_capacity;  // kg per hour
         float efficiency;           // 0.0 to 1.0
-        float mtbf_hours;           // Mean Time Between Failures
-        float mttr_hours;           // Mean Time To Repair
+        float mtbf_hours;           // Mean time between failures
+        float mttr_hours;           // Mean repair time
         float hours_since_maint;
         float maint_interval_h;
         float energy_kw;
