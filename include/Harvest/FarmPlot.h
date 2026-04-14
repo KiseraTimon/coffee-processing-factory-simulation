@@ -21,7 +21,7 @@ namespace FactorySim {
 
     public:
         FarmPlot(
-            std::string& id,
+            std::string id,
             CoffeeVariety variety,
             float area,
             int alt,

@@ -1,9 +1,10 @@
 #include "../../include/Harvest/FarmPlot.h"
 #include <algorithm>
+#include <utility>
 
 namespace FactorySim {
     FarmPlot::FarmPlot(
-            std::string& id,
+            std::string id,
             CoffeeVariety variety,
             float area,
             int alt,
@@ -12,7 +13,7 @@ namespace FactorySim {
             float r_mean = 0.85f,
             float r_stddev = 0.10f)
                 :
-        plot_id(id),
+        plot_id(std::move(id)),
         variety(variety),
         area_ha(area),
         altitude(alt),
