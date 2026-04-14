@@ -10,7 +10,7 @@ namespace FactorySim {
         status(MachineStatus::RUNNING),
         throughput_capacity(throughput),
         efficiency(1.0f),
-        mtbf_hours(fillRandom(1.0f, 24.0f)),
+        mtbf_hours(fillRandom(500.0f, 5000.0f)),
         mttr_hours(fillRandom(0.0f, 1.0f)),
         hours_since_maint(0.0f),
         maint_interval_h(fillRandom(100.0f, 500.0f)),
