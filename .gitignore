@@ -1,0 +1,39 @@
+# CLion and JetBrains Specifics
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/vcs.xml
+.idea/dictionaries
+.idea/shelf/
+cmake-build-*/
+
+# Compiled Object Files
+*.o
+*.obj
+*.slo
+*.lo
+
+# Libraries and Static/Dynamic Binaries
+*.a
+*.lib
+*.so
+*.dylib
+*.dll
+*.lai
+*.la
+
+# Executables
+*.exe
+*.out
+*.app
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# CMake files
+CMakeCache.txt
+CMakeFiles/
+CMakeScripts/
+cmake_install.cmake
+install_manifest.txt
+Makefile
