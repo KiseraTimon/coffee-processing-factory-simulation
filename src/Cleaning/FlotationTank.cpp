@@ -29,6 +29,11 @@ namespace  FactorySim {
         //
     }
 
+    void FlotationTank::logEvent(EventLog &log) {
+        //
+    }
+
+
 
 
 

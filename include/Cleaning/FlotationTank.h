@@ -26,6 +26,7 @@ namespace FactorySim {
         // Override Method
         void process(Batch &batch, float delta) override;
         void onBreakdown() override;
+        void logEvent(EventLog &log) override;
 
     };
 }
