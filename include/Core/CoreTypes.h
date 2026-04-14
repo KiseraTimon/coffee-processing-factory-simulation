@@ -41,6 +41,10 @@ namespace FactorySim {
         ACCEPTED, REJECTED, REPROCESS
     };
 
+    enum class RoastProfile {
+        LIGHT, MEDIUM, DARK, ESPRESSO
+    };
+
     // Forward declaration of Event Logs
     class EventLog;
 }
