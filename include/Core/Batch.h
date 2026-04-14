@@ -40,6 +40,7 @@ namespace FactorySim {
         void addContamination(float amount);
         void adjustMoisture(float amount);
         void reduceContamination(float fraction);
+        void setRoastStats(float color_score, float degassing_hours);
 
         // Getters
         float getWeight() const { return weight_kg; }

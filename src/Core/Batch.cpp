@@ -57,7 +57,6 @@ namespace FactorySim {
         if (contamination < 0.0f) contamination = 0.0f;
     }
 
-
     void Batch::adjustMoisture(float amount) {
         moisture_pct += amount;
 
@@ -67,6 +66,11 @@ namespace FactorySim {
         } else if (moisture_pct > 100.0f) {
             moisture_pct = 100.0f;
         }
+    }
+
+    void Batch::setRoastStats(float color_score, float degassing_hours) {
+        roast_color_score = color_score;
+        degassing_hours_req = degassing_hours;
     }
 
 }
