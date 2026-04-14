@@ -1,4 +1,5 @@
 #include "../../include/Reception/ReceptionClerk.h"
+#include "../../include/Core/Utils.h"
 #include <random>
 
 namespace FactorySim {
@@ -8,8 +9,8 @@ namespace FactorySim {
         float speed,
         float duration)
             :
-    Worker(id, name, WorkerRole::RECEIVER, fillRandom(0.0f, 1.0f)),
-    data_entry_accuracy(fillRandom(0.0f, 1.0f)),
+    Worker(id, name, WorkerRole::RECEIVER, Utils::fillRandom(0.0f, 1.0f)),
+    data_entry_accuracy(Utils::fillRandom(0.0f, 1.0f)),
     processing_speed(speed),
     processing_duration(duration){};
 
