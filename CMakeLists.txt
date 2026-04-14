@@ -29,4 +29,5 @@ add_executable(Coffee_Processing_Factory_Simulation main.cpp
         include/Cleaning/FlotationTank.h
         src/Cleaning/FlotationTank.cpp
         include/Cleaning/DebrisRemover.h
+        src/Cleaning/DebrisRemover.cpp
 )
