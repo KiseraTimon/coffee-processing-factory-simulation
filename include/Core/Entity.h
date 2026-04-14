@@ -11,16 +11,6 @@ namespace FactorySim {
     protected:
         std::string entity_id;
 
-        static float fillRandom(float min, float max) {
-            // Static generator so the method is only seeded once
-            static std::mt19937 gen(std::random_device{}());
-
-            // Uniform distribution for the range [0.0, 0.6]
-            std::uniform_real_distribution<float> dis(min, max);
-
-            return dis(gen);
-        }
-
     public:
         // Constructor
         explicit Entity(std::string id): entity_id(std::move(id)){}
