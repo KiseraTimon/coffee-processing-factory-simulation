@@ -32,4 +32,5 @@ add_executable(Coffee_Processing_Factory_Simulation main.cpp
         src/Cleaning/DebrisRemover.cpp
         include/Processing/WeatherModel.h
         src/Processing/WeatherModel.cpp
+        include/Processing/PulpingMachine.h
 )
