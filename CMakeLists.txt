@@ -53,4 +53,5 @@ add_executable(Coffee_Processing_Factory_Simulation main.cpp
         src/Packaging/PackagingMachine.cpp
         include/Warehouse/InventoryRecord.h
         include/Warehouse/Warehouse.h
+        src/Warehouse/Warehouse.cpp
 )
