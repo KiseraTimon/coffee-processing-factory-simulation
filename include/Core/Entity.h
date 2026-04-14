@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include <utility>
+#include <random>
 #include "CoreTypes.h"
 
 namespace FactorySim {
