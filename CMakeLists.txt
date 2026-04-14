@@ -42,4 +42,6 @@ add_executable(Coffee_Processing_Factory_Simulation main.cpp
         src/Processing/DryingBed.cpp
         include/Milling/Huller.h
         src/Milling/Huller.cpp
+        include/Milling/DensitySorter.h
+        src/Milling/DensitySorter.cpp
 )
