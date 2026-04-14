@@ -46,4 +46,6 @@ add_executable(Coffee_Processing_Factory_Simulation main.cpp
         src/Milling/DensitySorter.cpp
         include/Milling/OpticalSorter.h
         src/Milling/OpticalSorter.cpp
+        include/Roasting/Roaster.h
+        src/Roasting/Roaster.cpp
 )
