@@ -11,7 +11,7 @@ namespace FactorySim {
         float measured_weight;  //kgs
         std::string clerk_id;
         std::string ticket_number;
-        std::chrono::time_point<> arrival_time;
+        std::chrono::time_point<std::chrono::system_clock> arrival_time;
 
         // Constructor
         IntakeRecord(
@@ -20,6 +20,6 @@ namespace FactorySim {
             float measured_weight,
             std::string clerk_id,
             std::string ticket_number,
-            std::chrono::time_point<> arrival);
+            std::chrono::time_point<std::chrono::system_clock> arrival);
     };
 }
